@@ -456,6 +456,8 @@ message StoreStats {
     repeated RecordPair write_io_rates = 18;
     // Operations' latencies in the store
     repeated RecordPair op_latencies = 19;
+    // the config of store
+    string config = 20;
 }
 
 message StoreHeartbeatRequest {
@@ -466,6 +468,7 @@ message StoreHeartbeatRequest {
 
 message StoreHeartbeatResponse {
     ResponseHeader header = 1;
+    string config = 2;
 }
 
 message ScatterRegionRequest {
