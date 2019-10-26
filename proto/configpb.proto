@@ -52,9 +52,13 @@ message UpdateRequest {
     RequestHeader header = 1;
 
     Component component = 2;
-    string subsysten = 3;
-    string name = 4;
-    string value = 5;
+    ConfigEntry entry = 3;
+}
+
+message ConfigEntry {
+    repeated string subsysten = 1;
+    string name = 2;
+    string value = 3;
 }
 
 message UpdateResponse {
