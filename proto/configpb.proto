@@ -56,7 +56,7 @@ message UpdateRequest {
 }
 
 message ConfigEntry {
-    repeated string subsysten = 1;
+    repeated string subsystem = 1;
     string name = 2;
     string value = 3;
 }
