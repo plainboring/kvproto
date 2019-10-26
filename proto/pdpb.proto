@@ -469,7 +469,8 @@ message StoreHeartbeatRequest {
 message StoreHeartbeatResponse {
     ResponseHeader header = 1;
 
-    repeated configpb.ConfigEntry entry = 2;
+    // repeated configpb.ConfigEntry entry = 2;
+    string config = 3;
 }
 
 message ScatterRegionRequest {
