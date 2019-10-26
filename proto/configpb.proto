@@ -54,6 +54,7 @@ message UpdateRequest {
 
     Component component = 2;
     ConfigEntry entry = 3;
+    uint64 store_id = 4;
 }
 
 message ConfigEntry {
