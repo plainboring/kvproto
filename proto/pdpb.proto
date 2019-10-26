@@ -3,6 +3,7 @@ package pdpb;
 
 import "metapb.proto";
 import "eraftpb.proto";
+import "configpb.proto";
 
 import "gogoproto/gogo.proto";
 import "rustproto.proto";
@@ -166,6 +167,7 @@ message PutStoreRequest {
     RequestHeader header = 1;
 
     metapb.Store store = 2;
+    string config = 3;
 }
 
 message PutStoreResponse {
@@ -456,8 +458,6 @@ message StoreStats {
     repeated RecordPair write_io_rates = 18;
     // Operations' latencies in the store
     repeated RecordPair op_latencies = 19;
-    // the config of store
-    string config = 20;
 }
 
 message StoreHeartbeatRequest {
@@ -468,7 +468,8 @@ message StoreHeartbeatRequest {
 
 message StoreHeartbeatResponse {
     ResponseHeader header = 1;
-    string config = 2;
+
+    repeated configpb.ConfigEntry entry = 2;
 }
 
 message ScatterRegionRequest {
