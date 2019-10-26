@@ -40,6 +40,7 @@ message GetRequest {
     RequestHeader header = 1;
 
     Component component = 2;
+    uint64 store_id = 3;
 }
 
 message GetResponse {
